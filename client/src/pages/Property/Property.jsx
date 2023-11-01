@@ -9,6 +9,7 @@ import { PuffLoader } from "react-spinners";
 import { AiFillHeart, AiTwotoneCar } from "react-icons/ai";
 import { MdMeetingRoom, MdLocationPin } from "react-icons/md";
 import { FaShower } from "react-icons/fa";
+import Map from "../../components/Map/Map";
 
 const Property = () => {
   const { pathname } = useLocation();
@@ -80,11 +81,15 @@ const Property = () => {
               </span>
             </div>
 
-            <button className="button">
-              Book your visit
-            </button>
+            <button className="button">Book your visit</button>
           </div>
-          <div className="right">Right Side</div>
+          <div className="map">
+            <Map
+              address={data?.address}
+              city={data?.city}
+              country={data?.country}
+            />
+          </div>
         </div>
       </div>
     </div>
